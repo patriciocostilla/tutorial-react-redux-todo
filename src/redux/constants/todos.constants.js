@@ -1,0 +1,3 @@
+export const ADD_TODO_SUCCESS = 'ADD_TODO_SUCCESS';
+
+export const GET_TODOS_SUCCESS = 'GET_TODOS_SUCCESS';

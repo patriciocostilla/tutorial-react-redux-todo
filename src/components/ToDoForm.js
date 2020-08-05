@@ -17,8 +17,8 @@ class ToDoForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const {content} = this.state;
-        this.props.addTodo(content);
+        const {value} = this.state;
+        this.props.addTodo({value});
         this.props.hide()
     }
 

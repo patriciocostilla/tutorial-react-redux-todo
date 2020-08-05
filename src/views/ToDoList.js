@@ -3,15 +3,22 @@ import {connect} from 'react-redux'
 
 import {ListGroup, Row, Col} from 'react-bootstrap'
 
-import ToDoModal from '../components/ToDoModal'
+import ToDoModal from '../components/ToDoModal';
+
+// Redux actions
+import {getTodos} from '../redux/actions/todos.actions'
 
 class ToDoList extends Component {
     state = {  }
 
     item(todo) {
         return (
-            <ListGroup.Item>{todo}</ListGroup.Item>
+            <ListGroup.Item key={todo.id}>{todo.value}</ListGroup.Item>
         )
+    }
+
+    componentDidMount() {
+        this.props.getTodos()
     }
 
     render() { 
@@ -43,4 +50,8 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(ToDoList);
+const mapDispatchToProps = {
+    getTodos
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
