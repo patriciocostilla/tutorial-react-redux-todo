@@ -9,7 +9,7 @@ class ToDoForm extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            content:'',
+            value:'',
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +23,8 @@ class ToDoForm extends Component {
     }
 
     handleChange(e) {
-        const content = e.target.value;
-        this.setState({content})
+        const value = e.target.value;
+        this.setState({value})
     }
 
     render() { 
@@ -33,7 +33,7 @@ class ToDoForm extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="FormContent">
                         <Form.Label>To Do</Form.Label>
-                        <Form.Control type="text" name="content" onChange={this.handleChange} placeholder="What to do?"/>
+                        <Form.Control type="text" name="value" onChange={this.handleChange} placeholder="What to do?"/>
                     </Form.Group>
                     <Form.Group controlId="FormSubmit">
                         <Form.Control type="submit" name="submit" className="btn btn-primary" value="Save"/>
